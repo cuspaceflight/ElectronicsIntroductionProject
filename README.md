@@ -44,3 +44,18 @@ Design Tips:
 - Use a ground fill on one side of the board instead of just connecting all the grounds by wire – much more reliable and good design practice. Ensure that ground fills are kept as continuous as possible and only cut through/interrupt them if necessary.
 - Run the DRC in the PCB editor once you think you’ve finished and look for things it suggests/flags as an error.
 - The design requirements for the boards are an absolute maximum! If you can make the board smaller, then go for it!
+
+## Software design
+General requirements:
+- Read from the BMP180
+- Write to the SD card
+
+Tips:
+- Flush the SD card every so often to ensure data is written
+- Write the data as CSV so you can interpret it after
+
+Extensions:
+- Write the BMP I2C handling yourself without a library
+  - Use the datasheet, I can provide some general info on writing an I2C library
+  - Usefull if you are writing for a sensor
+- Use SDFat as a lower level SD card library (Slightly higher performance)
